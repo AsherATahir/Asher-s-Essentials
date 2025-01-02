@@ -22,12 +22,12 @@ function Navbar() {
               className="navbar-nav mx-auto"
               style={{ fontFamily: "Oswald, sans-serif" }}
             >
-              <a
+              <Link
+                to={"/"}
                 className="navbar-brand d-flex justify-content-center"
-                href="#"
               >
                 Asher's Essentials
-              </a>
+              </Link>
               <li className="nav-item">
                 <Link to={"/"} className="nav-link active" aria-current="page">
                   Home

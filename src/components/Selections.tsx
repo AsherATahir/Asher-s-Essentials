@@ -29,11 +29,15 @@ function Selections({ itemList, loading }: Props) {
   return (
     <>
       <ul
-        className="d-flex justify-content-center flex-row mt-5 p-0 justify-content-center overflow-hidden w-100
+        className="d-flex flex-row mt-5 justify-content-center overflow-hidden w-100
     flex-wrap"
       >
         {filteredList.map((item, index) => (
-          <li className="m-3 w-25" key={index}>
+          <li
+            className="d-flex col-lg-4 justify-content-evenly mb-5 col-md-6 col-sm-8"
+            key={index}
+            id="listCard"
+          >
             <div className="card bg-black">
               <img
                 id="fetchImage"
