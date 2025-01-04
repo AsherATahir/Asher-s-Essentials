@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "./App.css";
 import "./components/BodyGlobals";
-import { BrowserRouter, Routes, Route, data } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { item } from "./Interfaces/interface";
 
 import Home from "./pages/Home";
