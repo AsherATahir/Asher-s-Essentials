@@ -30,7 +30,7 @@ function Selections({ itemList, loading }: Props) {
     <>
       <ul
         className="d-flex flex-row mt-5 justify-content-center overflow-hidden w-100
-    flex-wrap"
+    flex-wrap p-0"
       >
         {filteredList.map((item, index) => (
           <li
