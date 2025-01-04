@@ -7,8 +7,4 @@ import "bootstrap/";
 import "../node_modules/bootstrap";
 import "../css/custom.css";
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+createRoot(document.getElementById("root")!).render(<App />);
