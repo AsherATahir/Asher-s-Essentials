@@ -23,7 +23,7 @@ function Navbar() {
             >
               <Link
                 to={"/"}
-                className="navbar-brand d-flex justify-content-center"
+                className="navbar-brand d-flex justify-content-center m-0 me-md-3"
               >
                 Asher's Essentials
               </Link>
