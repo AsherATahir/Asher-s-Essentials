@@ -52,7 +52,7 @@ function Selections({ itemList, loading }: Props) {
                     : item.title}
                 </h5>
                 <p className="card-text"></p>
-                <Link to={`/buy/${item.id}`} className="btn btn-primary">
+                <Link to={`/buy/${item.id}`} className="btn btn-dark shadow">
                   Buy This!
                 </Link>
               </div>
