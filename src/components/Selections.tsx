@@ -38,7 +38,7 @@ function Selections({ itemList, loading }: Props) {
             key={index}
             id="listCard"
           >
-            <div className="card bg-black">
+            <div className="card bg-white shadow-lg">
               <img
                 id="fetchImage"
                 className="card-img-top"
@@ -46,7 +46,7 @@ function Selections({ itemList, loading }: Props) {
                 alt="Card image cap"
               ></img>
               <div className="card-body">
-                <h5 className="card-title text-white lead">
+                <h5 className="card-title text-subtle lead">
                   {item.title.length > 25
                     ? item.title.substring(0, 17) + exceededLength
                     : item.title}
