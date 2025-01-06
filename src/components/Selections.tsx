@@ -35,11 +35,11 @@ function Selections({ itemList, loading }: Props) {
         >
           {filteredList.map((item, index) => (
             <li
-              className="d-flex justify-content-evenly mb-5 col-lg-3 col-md-4 col-sm-8 mx-5 col-xl-3"
+              className="d-flex justify-content-evenly mb-5 col-7 col-lg-3 col-md-4 col-sm-6 col-xl-3 mx-xl-3 mx-lg-4 mx-md-4 mx-sm-3 mx-3"
               key={index}
               id="listCard"
             >
-              <div className="card bg-white shadow-lg">
+              <div className="card bg-white shadow-sm col-xl-9 d-flex align-items-center">
                 <img
                   id="fetchImage"
                   className="card-img-top img-fluid"
