@@ -35,7 +35,7 @@ function Selections({ itemList, loading }: Props) {
         >
           {filteredList.map((item, index) => (
             <li
-              className="d-flex justify-content-evenly mb-5 col-8 col-lg-3 col-md-4 col-sm-6 col-xl-3 mx-xl-3 mx-lg-4 mx-md-4 mx-sm-3 mx-3"
+              className="d-flex justify-content-evenly mb-5 col-10 col-lg-3 col-md-4 col-sm-6 col-xl-3 mx-xl-3 mx-lg-4 mx-md-4 mx-sm-3 mx-3"
               key={index}
               id="listCard"
             >
