@@ -46,6 +46,6 @@ li {
   list-style-type: none;
 }
 
-#fetchImage{
-
+.btn-width{
+  max-width: 90px;
 }
