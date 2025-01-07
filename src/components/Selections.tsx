@@ -35,11 +35,11 @@ function Selections({ itemList, loading }: Props) {
         >
           {filteredList.map((item, index) => (
             <li
-              className="d-flex justify-content-evenly mb-5 col-10 col-lg-3 col-md-4 col-sm-6 col-xl-3 mx-xl-3 mx-lg-4 mx-md-4 mx-sm-3 mx-3"
+              className="d-flex justify-content-evenly align-items-center mb-5 col-10 col-lg-3 col-md-4 col-sm-6 col-xl-3 mx-xl-3 mx-lg-4 mx-md-4 mx-sm-3 mx-3"
               key={index}
               id="listCard"
             >
-              <div className="card bg-white shadow-sm col-xl-9 d-flex align-items-center">
+              <div className="card bg-white shadow-sm col-xl-9 d-flex">
                 <img
                   id="fetchImage"
                   className="card-img-top img-fluid"
@@ -49,10 +49,14 @@ function Selections({ itemList, loading }: Props) {
                 <div className="card-body">
                   <h5 className="card-title text-subtle lead">
                     {item.title.length > 25
-                      ? item.title.substring(0, 17) + exceededLength
+                      ? item.title.substring(0, 25) + exceededLength
                       : item.title}
                   </h5>
-                  <p className="card-text"></p>
+                  <p className="card-text">
+                    {item.description.length > 25
+                      ? item.description.substring(0, 50) + exceededLength
+                      : item.description}
+                  </p>
                   <Link to={`/buy/${item.id}`} className="btn btn-dark shadow">
                     Buy This!
                   </Link>
