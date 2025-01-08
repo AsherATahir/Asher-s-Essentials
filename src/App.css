@@ -47,5 +47,13 @@ li {
 }
 
 .btn-width{
-  max-width: 90px;
+  max-width: 200px;
+}
+
+.itemDesc{
+  font-size: 10px;
+}
+
+.itemInfoCard{
+  width: 55%;
 }

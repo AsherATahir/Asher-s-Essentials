@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { item } from "../Interfaces/interface";
+import { Link } from "react-router-dom";
 
 interface Props {
   itemList: item[];
@@ -29,27 +30,43 @@ function Buy({ itemList, loading }: Props) {
     );
   }
 
-  return (
-    <>
-      <Navbar />
-      <div className="mt-5" id="top">
-        <div className="card bg-dark text-white">
-          <div className="card-header">{items[numID - 1]?.title}</div>
-          <div className="card-body">
-            <img
+  /*elements to reincorporate
+  title: {items[numID - 1]?.title}
+  image: <img
               src={items[numID - 1]?.image}
               style={{ height: "20rem" }}
               className="mt-3"
             ></img>
-            <h5 className="card-title mt-4">{"$" + items[numID - 1]?.price}</h5>
-            <p className="card-text">{items[numID - 1]?.description}</p>
-            <a href="#" className="btn btn-primary">
-              Add to Cart
-            </a>
+  price: {"$" + items[numID - 1]?.price}
+  description: {items[numID - 1]?.description}
+  */
+
+  return (
+    <>
+      <div className="d-flex justify-content-around align-items-center vh-100 mt-5">
+        <Navbar />
+        <div className="d-flex justify-content-center flex-column flex-md-row">
+          <div className="d-flex justify-content-center mb-3">
+            <img
+              src={items[numID - 1]?.image}
+              style={{ height: "20rem" }}
+              className=""
+            ></img>
+          </div>
+          <div className="justify-content-center d-flex itemDesc col-md-6">
+            <div className="d-flex flex-column w-75">
+              <h2 className="mb-3">{items[numID - 1]?.title}</h2>
+              <h3 className="my-auto mb-3">{"$" + items[numID - 1]?.price}</h3>
+              <div className="w-50 mx-auto mt-auto">
+                <p>{items[numID - 1]?.description}</p>
+                <a className="btn btn-dark shadow btn-width mx-auto mb-3">
+                  Add to Cart
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <BodyGlobals />
     </>
   );
 }
