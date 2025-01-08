@@ -38,7 +38,7 @@ function Buy({ itemList, loading }: Props) {
             <img
               src={items[numID - 1]?.image}
               style={{ height: "20rem" }}
-              className=""
+              className="img-fluid"
             ></img>
           </div>
           <div className="justify-content-center d-flex itemDesc col-md-6">
