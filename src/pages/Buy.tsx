@@ -45,7 +45,7 @@ function Buy({ itemList, loading }: Props) {
             <div className="d-flex flex-column col-12 col-md-8">
               <h2 className="mb-3">{items[numID - 1]?.title}</h2>
               <h3 className="my-auto mb-3">{"$" + items[numID - 1]?.price}</h3>
-              <div className="w-50 mx-auto mt-auto">
+              <div className="col-10 col-lg-12 mx-auto mt-auto">
                 <p>{items[numID - 1]?.description}</p>
                 <a className="btn btn-dark shadow btn-width mx-auto mb-3">
                   Add to Cart
