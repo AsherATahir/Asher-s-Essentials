@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { item } from "../Interfaces/interface";
-import { Link } from "react-router-dom";
 
 interface Props {
   itemList: item[];
