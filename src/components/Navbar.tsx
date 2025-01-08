@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Navbar() {
   let [cartItems, setItems] = useState<number>(0);
-  setItems(0);
+
+  useEffect(() => setItems(0), []);
+
   return (
     <>
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark navbg justify-content-center">
