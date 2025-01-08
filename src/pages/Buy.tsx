@@ -41,7 +41,7 @@ function Buy({ itemList, loading }: Props) {
               className=""
             ></img>
           </div>
-          <div className="justify-content-center d-flex itemDesc col-md-8">
+          <div className="justify-content-center d-flex itemDesc col-md-6">
             <div className="d-flex flex-column col-12 col-md-8">
               <h2 className="mb-3">{items[numID - 1]?.title}</h2>
               <h3 className="my-auto mb-3">{"$" + items[numID - 1]?.price}</h3>
