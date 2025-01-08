@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function Navbar() {
   let [cartItems, setItems] = useState<number>(0);
+  setItems(0);
   return (
     <>
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark navbg justify-content-center">
