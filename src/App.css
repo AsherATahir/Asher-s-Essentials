@@ -65,12 +65,21 @@ li {
   width: 10px;
   font-size: 6px;
   color: white;
+  background-color: black;
+}
+
+.link-underline{
+  text-decoration: none;
+}
+
+.link-underline:visited{
+  text-decoration: none;
 }
 
 @media (max-width: 992px) {
 
   .itemDesc{
-    font-size: 14px;
+    font-size: 13px;
   }
   
 }

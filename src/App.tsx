@@ -7,6 +7,7 @@ import { item } from "./Interfaces/interface";
 
 import Home from "./pages/Home";
 import Buy from "./pages/Buy";
+import Checkout from "./pages/Checkout";
 
 //commit test
 
@@ -51,6 +52,7 @@ function App() {
             element={<Buy itemList={items} loading={loading} />}
           ></Route>
           <Route path="*"></Route>
+          <Route path="/checkout" element={<Checkout />}></Route>
         </Routes>
       </BrowserRouter>
     </>

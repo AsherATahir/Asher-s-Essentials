@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
-import { useState } from "react";
+import Cart from "./Cart";
 
 function Navbar() {
-  let [cartItems, setItems] = useState<number>(0);
   return (
     <>
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark navbg justify-content-center">
@@ -33,15 +32,18 @@ function Navbar() {
                 Styles
               </a>
             </li>
-            <li className="nav-item d-flex justify-content-center">
-              <a href="#">
+            <li
+              className="nav-item d-flex justify-content-center"
+              style={{ textDecoration: "none" }}
+            >
+              <Link to={"/Checkout"} className="d-flex link-underline">
                 <ShoppingCart
                   size={35}
                   color="#ffffff"
                   className="nav-link ms-2 m-lg-0"
                 ></ShoppingCart>
-              </a>
-              <div className="m-0 border rounded itemCircle">{cartItems}</div>
+                <Cart />
+              </Link>
             </li>
           </div>
         </ul>

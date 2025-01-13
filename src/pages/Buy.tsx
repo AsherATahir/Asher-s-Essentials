@@ -1,10 +1,13 @@
 import BodyGlobals from "../components/BodyGlobals";
-import { useEffect } from "react";
 import LoadingFallback from "../components/LoadingFallback";
 import Navbar from "../components/Navbar";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { item } from "../Interfaces/interface";
+import { useDispatch, useSelector } from "react-redux";
+import { increment } from "../store/incrementSlice";
+import { RootState } from "../store/store";
 
 interface Props {
   itemList: item[];
@@ -12,6 +15,9 @@ interface Props {
 }
 
 function Buy({ itemList, loading }: Props) {
+  useSelector((state: RootState) => state.counter.value);
+  const dispatch = useDispatch();
+
   let [items, setItems] = useState(itemList);
   const { id } = useParams();
   const numID = Number(id);
@@ -47,7 +53,10 @@ function Buy({ itemList, loading }: Props) {
               <h3 className="my-auto mb-3">{"$" + items[numID - 1]?.price}</h3>
               <div className="col-11 col-lg-10 mx-auto mt-auto">
                 <p>{items[numID - 1]?.description}</p>
-                <a className="btn btn-dark shadow btn-width mx-auto mb-3">
+                <a
+                  className="btn btn-dark shadow btn-width mx-auto mb-3"
+                  onClick={() => dispatch(increment())}
+                >
                   Add to Cart
                 </a>
               </div>
