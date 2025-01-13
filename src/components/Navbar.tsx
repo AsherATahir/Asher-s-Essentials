@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
-import { useEffect, useState } from "react";
 
 function Navbar() {
   let [cartItems, setItems] = useState<number>(0);
@@ -36,15 +35,18 @@ function Navbar() {
                 Styles
               </a>
             </li>
-            <li className="nav-item d-flex justify-content-center">
-              <a href="#">
+            <li
+              className="nav-item d-flex justify-content-center"
+              style={{ textDecoration: "none" }}
+            >
+              <Link to={"/Checkout"} className="d-flex link-underline">
                 <ShoppingCart
                   size={35}
                   color="#ffffff"
                   className="nav-link ms-2 m-lg-0"
                 ></ShoppingCart>
-              </a>
-              <div className="m-0 border rounded itemCircle">{cartItems}</div>
+                <Cart />
+              </Link>
             </li>
           </div>
         </ul>
