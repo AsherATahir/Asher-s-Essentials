@@ -25,9 +25,9 @@ function Popup({ itemName, active }: Props) {
             <button type="button" className="btn-close"></button>
           </div>
           <div className="toast-body">
-            {itemName.length > 25
-              ? itemName.substring(0, 20) + "..."
-              : itemName.substring(0, 20)}{" "}
+            {itemName?.length > 25
+              ? itemName?.substring(0, 20) + "..."
+              : itemName?.substring(0, 20)}{" "}
             added to cart
           </div>
         </div>
