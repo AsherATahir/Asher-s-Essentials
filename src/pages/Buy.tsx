@@ -39,36 +39,36 @@ function Buy({ itemList, loading }: Props) {
 
   return (
     <>
-      <div className="d-flex justify-content-around align-items-center vh-100 mt-5">
-        <Navbar />
-        <div className="d-flex justify-content-center align-items-center flex-column flex-md-row">
-          <div className="d-flex justify-content-center mb-3">
-            <img
-              src={items[numID - 1]?.image}
-              style={{ height: "20rem" }}
-              className="img-fluid"
-            ></img>
-          </div>
-          <div className="justify-content-center d-flex itemDesc col-md-6">
-            <div className="d-flex flex-column col-12 col-md-8">
-              <h2 className="mb-3">{items[numID - 1]?.title}</h2>
-              <h3 className="my-auto mb-3">{"$" + items[numID - 1]?.price}</h3>
-              <div className="col-11 col-lg-10 mx-auto mt-auto">
-                <p>{items[numID - 1]?.description}</p>
-                <a
-                  className="btn btn-dark shadow btn-width mx-auto mb-3"
-                  onClick={() => {
-                    dispatch(increment());
-                    setClick(true);
-                    setTimeout(() => setClick(false), 4000);
-                  }}
-                >
-                  Add to Cart
-                </a>
-                <Popup
-                  itemName={items[numID - 1]?.title}
-                  active={itemClicked}
-                />
+      <div className="vh-100 align-items-center justify-content-center d-flex overflow-hidden">
+        <div className="d-flex justify-content-around align-items-center mt-5">
+          <Navbar />
+          <div className="d-flex justify-content-center align-items-center flex-column flex-md-row">
+            <div className="d-flex justify-content-center mb-3 col-8 col-md-6">
+              <img src={items[numID - 1]?.image} className="img-fluid"></img>
+            </div>
+            <div className="justify-content-center d-flex itemDesc col-md-6">
+              <div className="d-flex flex-column col-12 col-md-8">
+                <h2 className="mb-3">{items[numID - 1]?.title}</h2>
+                <h3 className="my-auto mb-3">
+                  {"$" + items[numID - 1]?.price}
+                </h3>
+                <div className="col-11 col-lg-10 mx-auto mt-auto">
+                  <p>{items[numID - 1]?.description}</p>
+                  <a
+                    className="btn btn-dark shadow btn-width mx-auto mb-3"
+                    onClick={() => {
+                      dispatch(increment());
+                      setClick(true);
+                      setTimeout(() => setClick(false), 4000);
+                    }}
+                  >
+                    Add to Cart
+                  </a>
+                  <Popup
+                    itemName={items[numID - 1]?.title}
+                    active={itemClicked}
+                  />
+                </div>
               </div>
             </div>
           </div>
