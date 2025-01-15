@@ -60,6 +60,7 @@ function Buy({ itemList, loading }: Props) {
                   onClick={() => {
                     dispatch(increment());
                     setClick(true);
+                    setTimeout(() => setClick(false), 4000);
                   }}
                 >
                   Add to Cart

@@ -5,6 +5,8 @@ interface Props {
   active: boolean;
 }
 
+//set timeout to make active false, then the button can popup again
+
 function Popup({ itemName, active }: Props) {
   return (
     <>
