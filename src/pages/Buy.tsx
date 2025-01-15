@@ -43,7 +43,7 @@ function Buy({ itemList, loading }: Props) {
         <div className="d-flex justify-content-around align-items-center mt-5">
           <Navbar />
           <div className="d-flex justify-content-center align-items-center flex-column flex-md-row">
-            <div className="d-flex justify-content-center mb-3 col-8 col-md-6">
+            <div className="d-flex justify-content-center mb-3 col-9 col-md-6">
               <img src={items[numID - 1]?.image} className="img-fluid"></img>
             </div>
             <div className="justify-content-center d-flex itemDesc col-md-6">
