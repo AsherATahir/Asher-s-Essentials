@@ -1,6 +1,7 @@
 import BodyGlobals from "../components/BodyGlobals";
 import LoadingFallback from "../components/LoadingFallback";
 import Navbar from "../components/Navbar";
+import Popup from "../components/Popup";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -19,6 +20,7 @@ function Buy({ itemList, loading }: Props) {
   const dispatch = useDispatch();
 
   let [items, setItems] = useState(itemList);
+  let [itemClicked, setClick] = useState(false);
   const { id } = useParams();
   const numID = Number(id);
   useEffect(() => setItems(itemList));
@@ -55,10 +57,17 @@ function Buy({ itemList, loading }: Props) {
                 <p>{items[numID - 1]?.description}</p>
                 <a
                   className="btn btn-dark shadow btn-width mx-auto mb-3"
-                  onClick={() => dispatch(increment())}
+                  onClick={() => {
+                    dispatch(increment());
+                    setClick(true);
+                  }}
                 >
                   Add to Cart
                 </a>
+                <Popup
+                  itemName={items[numID - 1]?.title}
+                  active={itemClicked}
+                />
               </div>
             </div>
           </div>

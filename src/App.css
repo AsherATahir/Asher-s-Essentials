@@ -76,6 +76,32 @@ li {
   text-decoration: none;
 }
 
+.notifActive{
+  opacity: 0;
+  animation-name: notif-fade;
+  animation-duration: 4s;
+}
+
+.notif{
+  opacity: 0;
+}
+
+/*insert animation here that makes notifActive appear and disappear */
+@keyframes notif-fade{
+  0%{
+    opacity: 0;
+  }
+  30%{
+    opacity: 1;
+  }
+  80%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
 @media (max-width: 992px) {
 
   .itemDesc{

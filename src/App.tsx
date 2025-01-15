@@ -17,7 +17,9 @@ function App() {
 
   useEffect(() => {
     //rerender so state is now set to itemsList
-    fetch("https://fakestoreapi.com/products")
+    fetch(
+      "https://f514e33f-7fd2-4797-9d35-8270653a965b.mock.pstmn.io/?items=04"
+    )
       .then((response) => {
         if (!response.ok) {
           console.log("Issue Loading Item \n (Data cannot be fetched)");

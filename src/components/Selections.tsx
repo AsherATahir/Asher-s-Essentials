@@ -18,11 +18,6 @@ function Selections({ itemList, loading }: Props) {
     console.log("use effect entered");
   });
 
-  let filteredList = items.filter((numbers) => {
-    //this API has some terribly cropped pictures, so I filtered them out.
-    if (numbers.id < 4 || numbers.id > 8) return numbers;
-  });
-
   //returns a loading screen until items load (the API I chose can be slow at times)
   if (loading == true) return <LoadingFallback />;
 
@@ -33,7 +28,7 @@ function Selections({ itemList, loading }: Props) {
           className="d-flex flex-row mt-5 justify-content-center overflow-hidden
     flex-wrap p-0"
         >
-          {filteredList.map((item, index) => (
+          {items.map((item, index) => (
             <li
               className="d-flex justify-content-evenly mb-5 col-10 col-lg-3 col-md-4 col-sm-6 col-xl-3 mx-xl-3 mx-lg-4 mx-md-4 mx-sm-3 mx-3"
               key={index}
