@@ -2,34 +2,36 @@ import "../assets/favicon.png";
 
 interface Props {
   itemName: string;
+  itemImage: string;
   active: boolean;
 }
 
 //set timeout to make active false, then the button can popup again
 
-function Popup({ itemName, active }: Props) {
+function Popup({ itemName, active, itemImage }: Props) {
   return (
     <>
       <div
-        className={`toast-container position-fixed bottom-0 end-0 p-3 notif${
+        className={`toast-container p-3 notifColor rounded-4 notif${
           active ? "Active" : ""
         }`}
       >
         <div>
-          <div className="toast-header">
-            <img
-              src="../assets/favicon.png"
-              className="rounded me-2"
-              alt="..."
-            ></img>
-            <strong className="me-auto">A-Essentials</strong>
-            <small>Just now</small>
-            <button type="button" className="btn-close"></button>
+          <div>
+            <div className="d-inline">
+              <img
+                src={itemImage}
+                className="rounded me-2"
+                alt="logo"
+                style={{ height: "2rem" }}
+              ></img>
+            </div>
+            <strong className="me-auto">Asher's-Essentials</strong>
           </div>
           <div className="toast-body">
-            {itemName?.length > 25
-              ? itemName?.substring(0, 20) + "..."
-              : itemName?.substring(0, 20)}{" "}
+            {itemName?.length > 40
+              ? itemName?.substring(0, 40) + "..."
+              : itemName?.substring(0, 40)}{" "}
             added to cart
           </div>
         </div>

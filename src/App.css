@@ -86,6 +86,16 @@ li {
   opacity: 0;
 }
 
+.notifColor{
+  background-color: #006d77;
+  color: white;
+}
+
+.bigToast{
+  display: flex;
+  justify-content: center;
+}
+
 /*insert animation here that makes notifActive appear and disappear */
 @keyframes notif-fade{
   0%{
@@ -106,6 +116,16 @@ li {
 
   .itemDesc{
     font-size: 13px;
+  }
+
+}
+
+@media(max-width : 772px){
+
+  .smallToast{
+    position: fixed;
+    top: 0;
+    width: 100px;
   }
 
 }

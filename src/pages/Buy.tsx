@@ -64,10 +64,13 @@ function Buy({ itemList, loading }: Props) {
                   >
                     Add to Cart
                   </a>
-                  <Popup
-                    itemName={items[numID - 1]?.title}
-                    active={itemClicked}
-                  />
+                  <div className="smallToast bigToast mt-2">
+                    <Popup
+                      itemName={items[numID - 1]?.title}
+                      itemImage={items[numID - 1]?.image}
+                      active={itemClicked}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
