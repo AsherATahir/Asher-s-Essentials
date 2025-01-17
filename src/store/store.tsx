@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterSlice from "./incrementSlice";
+import incrementSlice from "./incrementSlice";
 import { persistReducer } from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
@@ -11,7 +11,7 @@ const persistConfig = {
 };
 
 const reducer = combineReducers({
-  counter: counterSlice,
+  counter: incrementSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

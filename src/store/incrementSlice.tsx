@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { PURGE } from "redux-persist";
 
-const counterSlice = createSlice({
+const incrementSlice = createSlice({
   name: "counter",
   initialState: {
     value: 0,
@@ -9,9 +10,18 @@ const counterSlice = createSlice({
     increment: (state) => {
       state.value += 1;
     },
+    decrement: (state) => {
+      state.value -= 1;
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(PURGE, (state) => {
+      return state;
+    });
   },
 });
 
-export const { increment } = counterSlice.actions;
+export const { increment } = incrementSlice.actions;
+export const { decrement } = incrementSlice.actions;
 
-export default counterSlice.reducer;
+export default incrementSlice.reducer;
