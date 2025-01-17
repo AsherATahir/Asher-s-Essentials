@@ -16,7 +16,7 @@ function Checkout() {
     <>
       <div className="vh-100 flex-column d-flex justify-content-evenly">
         <Navbar />
-        <h1 className="mt-5" style={{ fontFamily: "Oswald, sans-serif" }}>
+        <h1 style={{ fontFamily: "Oswald, sans-serif" }}>
           Review Your Selections
         </h1>
         <div className="d-flex justify-content-center align-items-center">
