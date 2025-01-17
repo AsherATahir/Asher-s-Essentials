@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { decrement } from "../store/incrementSlice";
+import { reset } from "../store/incrementSlice";
 import { RootState } from "../store/store";
 import persistor from "../main";
 
@@ -50,7 +51,7 @@ function Checkout() {
             className="ms-2"
             onClick={() => {
               persistor.purge();
-              window.location.reload(); //there be a better alternative to this
+              dispatch(reset());
             }}
           >
             Reset Cart

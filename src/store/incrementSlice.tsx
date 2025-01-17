@@ -13,6 +13,9 @@ const incrementSlice = createSlice({
     decrement: (state) => {
       state.value -= 1;
     },
+    reset: (state) => {
+      state.value = 0;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(PURGE, (state) => {
@@ -23,5 +26,6 @@ const incrementSlice = createSlice({
 
 export const { increment } = incrementSlice.actions;
 export const { decrement } = incrementSlice.actions;
+export const { reset } = incrementSlice.actions;
 
 export default incrementSlice.reducer;
