@@ -11,7 +11,7 @@ import "./components/BodyGlobals";
 import Home from "./pages/Home";
 import Buy from "./pages/Buy";
 import Checkout from "./pages/Checkout";
-import InternalError from "./components/internalError";
+import InternalError from "./components/InternalError";
 
 function App() {
   let [items, setItems] = useState<item[]>([]);
