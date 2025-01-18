@@ -28,7 +28,7 @@ function Selections({ itemList, loading }: Props) {
           className="d-flex flex-row mt-5 justify-content-center overflow-hidden
     flex-wrap p-0"
         >
-          {items.map((item, index) => (
+          {items?.map((item, index) => (
             <li
               className="d-flex justify-content-evenly mb-5 col-10 col-lg-3 col-md-4 col-sm-6 col-xl-3 mx-xl-3 mx-lg-4 mx-md-4 mx-sm-3 mx-3"
               key={index}

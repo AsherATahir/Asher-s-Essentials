@@ -17,12 +17,14 @@ interface Props {
 
 function Buy({ itemList, loading }: Props) {
   useSelector((state: RootState) => state.counter.value);
+  useSelector((state: RootState) => state.counter.itemID);
   const dispatch = useDispatch();
 
   let [items, setItems] = useState(itemList);
   let [itemClicked, setClick] = useState(false);
   const { id } = useParams();
   const numID = Number(id);
+
   useEffect(() => setItems(itemList));
 
   if (loading == true) {
