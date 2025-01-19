@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { item } from "./Interfaces/interface";
 import { useDispatch, useSelector } from "react-redux";
-import { setArray } from "./store/incrementSlice";
+import { setArray, defineArray } from "./store/incrementSlice";
 import { RootState } from "./store/store";
 
 import "./App.css";
@@ -35,6 +35,7 @@ function App() {
         setLoading(false);
         setItems(data);
         dispatch(setArray(data)); //I originally didn't want to use redux, but needed it to simulate a realistic cart integration.
+        dispatch(defineArray());
       })
       .catch((err) => console.log(err));
   }, []);

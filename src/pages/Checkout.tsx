@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { decrement } from "../store/incrementSlice";
 import { reset, clearID, removeID } from "../store/incrementSlice";
 import { RootState } from "../store/store";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import persistor from "../main";
 import favicon from "../assets/favicon.png";
 
@@ -20,12 +20,8 @@ function Checkout() {
 
   let [currentItem, setItem] = itemID?.length != 0 ? useState(0) : useState(-1);
 
-  useEffect(() => {
-    console.log(itemID); // Logs the state once it's updated
-  }, [itemID]);
-
-  console.log(itemID);
   console.log(itemArray);
+  console.log(itemID);
 
   return (
     <>

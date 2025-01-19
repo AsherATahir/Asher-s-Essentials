@@ -8,7 +8,7 @@ const incrementSlice = createSlice({
   initialState: {
     value: 0,
     items: [] as item[],
-    itemID: [-1] as number[],
+    itemID: [] as number[],
   },
   reducers: {
     increment: (state) => {
@@ -44,6 +44,12 @@ const incrementSlice = createSlice({
         itemID: [],
       };
     },
+    defineArray: (state) => {
+      return {
+        ...state,
+        itemID: state.itemID.concat(-1),
+      };
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(PURGE, (state) => {
@@ -59,5 +65,6 @@ export const { setArray } = incrementSlice.actions;
 export const { addID } = incrementSlice.actions;
 export const { clearID } = incrementSlice.actions;
 export const { removeID } = incrementSlice.actions;
+export const { defineArray } = incrementSlice.actions;
 
 export default incrementSlice.reducer;
