@@ -35,7 +35,7 @@ function Checkout() {
               onClick={() => {
                 currentItem > -1 &&
                   itemID?.length != 0 &&
-                  setItem((currentItem -= 1));
+                  setItem(currentItem - 1);
 
                 currentItem == -1 &&
                   itemID?.length != 0 &&
@@ -49,7 +49,7 @@ function Checkout() {
                 src={
                   currentItem == -1
                     ? favicon
-                    : itemArray[itemID[currentItem] - 1]?.image
+                    : itemArray[itemID[currentItem] - 1]?.image || favicon
                 }
                 className="card-img"
                 alt="..."
@@ -67,7 +67,7 @@ function Checkout() {
             onClick={() => {
               currentItem < itemID?.length &&
                 itemID?.length != 0 &&
-                setItem((currentItem += 1));
+                setItem(currentItem + 1);
 
               currentItem == itemID?.length &&
                 itemID?.length != 0 &&
@@ -88,7 +88,7 @@ function Checkout() {
                 currentItem - 1 == -1 && itemID?.length == 1 && setItem(-1); //about to be empty
                 currentItem - 1 != -1 &&
                   itemID?.length != 1 &&
-                  setItem((currentItem -= 1)); //not located at index 0
+                  setItem(currentItem - 1); //not located at index 0
               }
             }}
           >
