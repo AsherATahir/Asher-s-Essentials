@@ -20,6 +20,9 @@ function Checkout() {
 
   let [currentItem, setItem] = itemID?.length != 0 ? useState(0) : useState(-1);
 
+  console.log(itemID);
+  console.log(itemArray);
+
   return (
     <>
       <div className="vh-100 flex-column d-flex justify-content-evenly">
