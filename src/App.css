@@ -5,12 +5,19 @@
   text-align: center;
 }
 
-button, /* for IOS default styles. */
+button, /* IOS Styling */
 button:focus,
-button:active { 
-  -webkit-tap-highlight-color: transparent;
-  outline: none; 
+button:active,
+button:visited {
+  -webkit-tap-highlight-color: transparent; 
+  -webkit-appearance: none; 
+  appearance: none;
+  outline: none;
+  background: transparent; 
+  border: none; 
+  box-shadow: none;
 }
+
 
 
 body {
