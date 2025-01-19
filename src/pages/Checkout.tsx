@@ -26,7 +26,10 @@ function Checkout() {
       <Navbar></Navbar>
       <div className="d-flex flex-column flex-xl-row justify-content-center align-items-center overflow-x-hidden">
         <div className="vh-100 d-flex flex-column justify-content-evenly">
-          <h1 style={{ fontFamily: "Oswald, sans-serif" }}>
+          <h1
+            style={{ fontFamily: "Oswald, sans-serif" }}
+            className="mobileHeader"
+          >
             Review Your Selections
           </h1>
           <div className="d-flex justify-content-center align-items-center">
