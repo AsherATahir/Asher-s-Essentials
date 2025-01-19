@@ -36,7 +36,7 @@ function Navbar() {
               className="nav-item d-flex justify-content-center"
               style={{ textDecoration: "none" }}
             >
-              <Link to={"/Checkout"} className="d-flex link-underline">
+              <Link to={"/Checkout#imgLink"} className="d-flex link-underline">
                 <ShoppingCart
                   size={35}
                   color="#ffffff"
