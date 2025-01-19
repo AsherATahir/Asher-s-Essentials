@@ -60,7 +60,7 @@ function Checkout() {
                   alt="..."
                 ></img>
                 <div className="card-body">
-                  <h5 className="card-title">
+                  <h5 className="card-title" id="imgLink">
                     {currentItem == -1
                       ? "CART IS EMPTY"
                       : itemArray[itemID[currentItem] - 1]?.title}
