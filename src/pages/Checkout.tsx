@@ -112,7 +112,7 @@ function Checkout() {
             </button>
           </div>
         </div>
-        <div className="vh-100 col-10 col-lg-6 me-lg-5 d-flex flex-column justify-content-center">
+        <div className="vh-100 col-12 col-md-10 col-lg-10 col-xl-6 me-xl-5 d-flex flex-column justify-content-center">
           <CustomerInfo></CustomerInfo>
         </div>
       </div>
