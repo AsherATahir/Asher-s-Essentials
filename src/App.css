@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+button {
+  color: #000;
+}
+
 body {
   margin: 0;
   background-repeat: no-repeat;
