@@ -22,7 +22,6 @@ function App() {
   let dispatch = useDispatch();
 
   useEffect(() => {
-    //rerender so state is now set to itemsList
     fetch("https://f514e33f-7fd2-4797-9d35-8270653a965b.mock.pstmn.io?items=04")
       .then((response) => {
         if (!response.ok) {
@@ -35,7 +34,7 @@ function App() {
       .then((data) => {
         setLoading(false);
         setItems(data);
-        dispatch(setArray({ payload: data })); //I originally didn't want to use redux, but needed it for certain features.
+        dispatch(setArray(data)); //I originally didn't want to use redux, but needed it to simulate a realistic cart integration.
       })
       .catch((err) => console.log(err));
   }, []);

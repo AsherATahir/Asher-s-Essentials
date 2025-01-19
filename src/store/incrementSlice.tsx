@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { item } from "../Interfaces/interface";
 import { _NEVER } from "@reduxjs/toolkit/query";
 import { PURGE } from "redux-persist";
 
@@ -6,7 +7,7 @@ const incrementSlice = createSlice({
   name: "counter",
   initialState: {
     value: 0,
-    items: [],
+    items: [] as item[],
     itemID: [],
   },
   reducers: {
@@ -25,6 +26,24 @@ const incrementSlice = createSlice({
         items: action.payload,
       };
     },
+    addID: (state, action) => {
+      return {
+        ...state,
+        itemID: state.itemID.concat(action.payload),
+      };
+    },
+    removeID: (state, action) => {
+      return {
+        ...state,
+        itemID: state.itemID.filter((_, index) => index !== action.payload),
+      };
+    },
+    clearID: (state) => {
+      return {
+        ...state,
+        itemID: [],
+      };
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(PURGE, (state) => {
@@ -37,6 +56,8 @@ export const { increment } = incrementSlice.actions;
 export const { decrement } = incrementSlice.actions;
 export const { reset } = incrementSlice.actions;
 export const { setArray } = incrementSlice.actions;
-//export const { addID } = incrementSlice.actions;
+export const { addID } = incrementSlice.actions;
+export const { clearID } = incrementSlice.actions;
+export const { removeID } = incrementSlice.actions;
 
 export default incrementSlice.reducer;

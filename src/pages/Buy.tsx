@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { item } from "../Interfaces/interface";
 import { useDispatch, useSelector } from "react-redux";
-import { increment } from "../store/incrementSlice";
+import { increment, addID } from "../store/incrementSlice";
 import { RootState } from "../store/store";
 
 interface Props {
@@ -62,6 +62,7 @@ function Buy({ itemList, loading }: Props) {
                       dispatch(increment());
                       setClick(true);
                       setTimeout(() => setClick(false), 4000);
+                      dispatch(addID(numID));
                     }}
                   >
                     Add to Cart
