@@ -20,9 +20,6 @@ function Checkout() {
 
   let [currentItem, setItem] = itemID?.length != 0 ? useState(0) : useState(-1);
 
-  console.log(itemArray);
-  console.log(itemID);
-
   return (
     <>
       <div className="vh-100 flex-column d-flex justify-content-evenly">
@@ -36,11 +33,11 @@ function Checkout() {
               className="me-3"
               size={100}
               onClick={() => {
-                currentItem > -1 &&
+                currentItem > 0 &&
                   itemID?.length != 0 &&
                   setItem(currentItem - 1);
 
-                currentItem == -1 &&
+                currentItem == 0 &&
                   itemID?.length != 0 &&
                   setItem(itemID?.length - 1);
               }}
@@ -68,11 +65,11 @@ function Checkout() {
           </div>
           <button
             onClick={() => {
-              currentItem < itemID?.length &&
+              currentItem < itemID?.length - 1 &&
                 itemID?.length != 0 &&
                 setItem(currentItem + 1);
 
-              currentItem == itemID?.length &&
+              currentItem == itemID?.length - 1 &&
                 itemID?.length != 0 &&
                 setItem(0);
             }}

@@ -105,6 +105,7 @@ li {
   font: inherit;
   border-radius: 0;
   appearance: none;
+  -webkit-appearance: none;
 }
 
 /*insert animation here that makes notifActive appear and disappear */
@@ -141,13 +142,7 @@ li {
 
 }
 
-@media(max-width: 500px){
-  .cardScroll{
-    min-height: 21rem;
-  }
-}
-
-@media(min-width: 500px) and (max-width: 1200px){
+@media(min-width: 500px){
   .cardScroll{
     min-height: 23rem;
   }
