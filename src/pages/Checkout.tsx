@@ -8,7 +8,7 @@ import { reset, clearID, removeID } from "../store/incrementSlice";
 import { RootState } from "../store/store";
 import { useState } from "react";
 import persistor from "../main";
-import favicon from "../assets/favicon.png";
+//import favicon from "../assets/favicon.png";
 
 function Checkout() {
   useSelector((state: RootState) => state.counter.value);
