@@ -47,7 +47,7 @@ const incrementSlice = createSlice({
     defineArray: (state) => {
       return {
         ...state,
-        itemID: state.itemID.concat(-1),
+        itemID: [-1],
       };
     },
   },
