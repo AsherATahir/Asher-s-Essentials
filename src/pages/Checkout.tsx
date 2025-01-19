@@ -48,7 +48,7 @@ function Checkout() {
               <img
                 src={
                   currentItem == -1
-                    ? favicon
+                    ? "..."
                     : itemArray[itemID[currentItem] - 1]?.image
                 }
                 className="card-img"
