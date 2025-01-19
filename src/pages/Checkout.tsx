@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import CustomerInfo from "../components/CustomerInfo";
 import { ChevronLeft } from "lucide-react";
 import { ChevronRight } from "lucide-react";
 
@@ -22,89 +23,94 @@ function Checkout() {
 
   return (
     <>
-      <div className="vh-100 flex-column d-flex justify-content-evenly overflow-x-hidden">
-        <Navbar />
-        <h1 style={{ fontFamily: "Oswald, sans-serif" }}>
-          Review Your Selections
-        </h1>
-        <div className="d-flex justify-content-center align-items-center">
-          <button className="removeButtonAttributes">
-            <ChevronLeft
-              className="me-3"
-              size={100}
-              onClick={() => {
-                currentItem > 0 &&
-                  itemID?.length != 0 &&
-                  setItem(currentItem - 1);
+      <Navbar></Navbar>
+      <div className="d-flex flex-column flex-xl-row justify-content-center align-items-center overflow-x-hidden">
+        <div className="vh-100 d-flex flex-column justify-content-evenly">
+          <h1 style={{ fontFamily: "Oswald, sans-serif" }}>
+            Review Your Selections
+          </h1>
+          <div className="d-flex justify-content-center align-items-center">
+            <button className="removeButtonAttributes">
+              <ChevronLeft
+                className="me-3"
+                size={100}
+                onClick={() => {
+                  currentItem > 0 &&
+                    itemID?.length != 0 &&
+                    setItem(currentItem - 1);
 
-                currentItem == 0 &&
-                  itemID?.length != 0 &&
-                  setItem(itemID?.length - 1);
-              }}
-            />
-          </button>
-          <div className="card col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 border-white shadow cardScroll">
-            <div className="d-flex flex-column my-auto">
-              <img
-                src={
-                  currentItem == -1
-                    ? favicon
-                    : itemArray[itemID[currentItem] - 1]?.image || favicon
-                }
-                className="card-img"
-                alt="..."
-              ></img>
-              <div className="card-body">
-                <h5 className="card-title">
-                  {currentItem == -1
-                    ? "CART IS EMPTY"
-                    : itemArray[itemID[currentItem] - 1]?.title}
-                </h5>
+                  currentItem == 0 &&
+                    itemID?.length != 0 &&
+                    setItem(itemID?.length - 1);
+                }}
+              />
+            </button>
+            <div className="card col-6 col-sm-4 col-md-4 col-lg-3 col-xl-4 border-white shadow cardScroll">
+              <div className="d-flex flex-column my-auto">
+                <img
+                  src={
+                    currentItem == -1
+                      ? favicon
+                      : itemArray[itemID[currentItem] - 1]?.image || favicon
+                  }
+                  className="card-img"
+                  alt="..."
+                ></img>
+                <div className="card-body">
+                  <h5 className="card-title">
+                    {currentItem == -1
+                      ? "CART IS EMPTY"
+                      : itemArray[itemID[currentItem] - 1]?.title}
+                  </h5>
+                </div>
               </div>
             </div>
-          </div>
-          <button
-            onClick={() => {
-              currentItem < itemID?.length - 1 &&
-                itemID?.length != 0 &&
-                setItem(currentItem + 1);
+            <button
+              onClick={() => {
+                currentItem < itemID?.length - 1 &&
+                  itemID?.length != 0 &&
+                  setItem(currentItem + 1);
 
-              currentItem == itemID?.length - 1 &&
-                itemID?.length != 0 &&
-                setItem(0);
-            }}
-            className="removeButtonAttributes"
-          >
-            <ChevronRight className="ms-3" size={100} />
-          </button>
+                currentItem == itemID?.length - 1 &&
+                  itemID?.length != 0 &&
+                  setItem(0);
+              }}
+              className="removeButtonAttributes"
+            >
+              <ChevronRight className="ms-3" size={100} />
+            </button>
+          </div>
+          <div>
+            <button
+              className="me-2 btn btn-dark shadow btn-width mx-auto"
+              onClick={() => {
+                count != 0 && dispatch(decrement());
+                if (currentItem != -1) {
+                  dispatch(removeID(currentItem));
+                  currentItem - 1 == -1 && itemID?.length == 1 && setItem(-1); //about to be empty
+                  currentItem - 1 != -1 &&
+                    itemID?.length != 1 &&
+                    setItem(currentItem - 1); //not located at index 0
+                }
+              }}
+            >
+              Remove from Cart
+            </button>
+            <button
+              className="ms-2 btn btn-dark shadow btn-width mx-auto"
+              onClick={() => {
+                persistor.purge();
+                dispatch(reset());
+                dispatch(clearID());
+                setItem(-1);
+              }}
+            >
+              Reset Cart
+            </button>
+          </div>
         </div>
-        <div>
-          <button
-            className="me-2 btn btn-dark shadow btn-width mx-auto"
-            onClick={() => {
-              count != 0 && dispatch(decrement());
-              if (currentItem != -1) {
-                dispatch(removeID(currentItem));
-                currentItem - 1 == -1 && itemID?.length == 1 && setItem(-1); //about to be empty
-                currentItem - 1 != -1 &&
-                  itemID?.length != 1 &&
-                  setItem(currentItem - 1); //not located at index 0
-              }
-            }}
-          >
-            Remove from Cart
-          </button>
-          <button
-            className="ms-2 btn btn-dark shadow btn-width mx-auto"
-            onClick={() => {
-              persistor.purge();
-              dispatch(reset());
-              dispatch(clearID());
-              setItem(-1);
-            }}
-          >
-            Reset Cart
-          </button>
+        <div className="vh-100 col-10 col-lg-6 me-lg-5 d-flex flex-column justify-content-center">
+          <CustomerInfo></CustomerInfo>
         </div>
       </div>
     </>
