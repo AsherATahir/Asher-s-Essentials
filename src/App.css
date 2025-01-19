@@ -109,6 +109,20 @@ li {
   border-radius: 0;
 }
 
+.removeButtonAttributes,
+.removeButtonAttributes:focus,
+.removeButtonAttributes:active,
+.removeButtonAttributes:visited {
+  -webkit-tap-highlight-color: transparent; 
+  -webkit-appearance: none; 
+  appearance: auto;
+  outline: none;  
+  border: none; 
+  background: transparent; 
+  box-shadow: none; 
+  -moz-focus-inner: 0;
+}
+
 /*insert animation here that makes notifActive appear and disappear */
 @keyframes notif-fade{
   0%{
