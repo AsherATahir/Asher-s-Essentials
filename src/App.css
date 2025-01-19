@@ -134,6 +134,15 @@ li {
   .mobileHeader{
     font-size: 40px;
     margin-bottom: 0px;
+    margin-top: 40px;
+  }
+
+  .mobilePayment{
+    font-size: 40px;
+  }
+
+  .customMobileMargin{
+    margin-bottom: 20px;
   }
 
 }

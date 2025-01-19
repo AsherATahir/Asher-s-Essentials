@@ -2,10 +2,13 @@ function CustomerInfo() {
   return (
     <>
       <div
-        className="d-flex flex-column p-3"
+        className="d-flex flex-column p-3 customMobileMargin"
         style={{ fontFamily: "Oswald, sans-serif" }}
       >
-        <h1 className="mb-5" style={{ fontFamily: "Oswald, sans-serif" }}>
+        <h1
+          className="mb-5 mobilePayment"
+          style={{ fontFamily: "Oswald, sans-serif" }}
+        >
           (Mock) Payment Information
         </h1>
         <h5 className="d-flex">Cardholder-name</h5>
