@@ -22,7 +22,7 @@ function Checkout() {
 
   return (
     <>
-      <div className="vh-100 flex-column d-flex justify-content-evenly">
+      <div className="vh-100 flex-column d-flex justify-content-evenly overflow-x-hidden">
         <Navbar />
         <h1 style={{ fontFamily: "Oswald, sans-serif" }}>
           Review Your Selections
