@@ -5,6 +5,14 @@
   text-align: center;
 }
 
+button, /* for IOS default styles. */
+button:focus,
+button:active { 
+  -webkit-tap-highlight-color: transparent;
+  outline: none; 
+}
+
+
 body {
   margin: 0;
   background-repeat: no-repeat;
@@ -149,8 +157,14 @@ li {
   }
 }
 
-@media(min-width: 500px) and (max-width: 1400px){
+@media(min-width: 500px) and (max-width: 1200px){
   .cardScroll{
     min-height: 23rem;
+  }
+}
+
+@media(min-width: 1200px){
+  .cardScroll{
+    min-height: 25rem;
   }
 }
