@@ -18,7 +18,7 @@ function Checkout() {
   let itemArray = useSelector((state: RootState) => state.counter.items);
   let itemID = useSelector((state: RootState) => state.counter.itemID);
 
-  let [currentItem, setItem] = itemID.length != 0 ? useState(0) : useState(-1);
+  let [currentItem, setItem] = itemID?.length != 0 ? useState(0) : useState(-1);
 
   return (
     <>
@@ -34,12 +34,12 @@ function Checkout() {
               size={100}
               onClick={() => {
                 currentItem > -1 &&
-                  itemID.length != 0 &&
+                  itemID?.length != 0 &&
                   setItem((currentItem -= 1));
 
                 currentItem == -1 &&
-                  itemID.length != 0 &&
-                  setItem(itemID.length - 1);
+                  itemID?.length != 0 &&
+                  setItem(itemID?.length - 1);
               }}
             />
           </button>
@@ -65,11 +65,13 @@ function Checkout() {
           </div>
           <button
             onClick={() => {
-              currentItem < itemID.length &&
-                itemID.length != 0 &&
+              currentItem < itemID?.length &&
+                itemID?.length != 0 &&
                 setItem((currentItem += 1));
 
-              currentItem == itemID.length && itemID.length != 0 && setItem(0);
+              currentItem == itemID?.length &&
+                itemID?.length != 0 &&
+                setItem(0);
             }}
             className="removeButtonAttributes"
           >
@@ -83,9 +85,9 @@ function Checkout() {
               count != 0 && dispatch(decrement());
               if (currentItem != -1) {
                 dispatch(removeID(currentItem));
-                currentItem - 1 == -1 && itemID.length == 1 && setItem(-1); //about to be empty
+                currentItem - 1 == -1 && itemID?.length == 1 && setItem(-1); //about to be empty
                 currentItem - 1 != -1 &&
-                  itemID.length != 1 &&
+                  itemID?.length != 1 &&
                   setItem((currentItem -= 1)); //not located at index 0
               }
             }}
