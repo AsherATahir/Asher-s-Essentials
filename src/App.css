@@ -105,7 +105,8 @@ li {
   font: inherit;
   border-radius: 0;
   appearance: none;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 /*insert animation here that makes notifActive appear and disappear */
@@ -148,7 +149,7 @@ li {
   }
 }
 
-@media(min-width: 500px) and (max-width: 1200px){
+@media(min-width: 500px) and (max-width: 1400px){
   .cardScroll{
     min-height: 23rem;
   }
