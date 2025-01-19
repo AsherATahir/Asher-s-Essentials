@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { decrement } from "../store/incrementSlice";
 import { reset, clearID, removeID } from "../store/incrementSlice";
 import { RootState } from "../store/store";
+import { useState } from "react";
 import persistor from "../main";
 import favicon from "../assets/favicon.png";
-import { useState } from "react";
 
 function Checkout() {
   useSelector((state: RootState) => state.counter.value);
@@ -19,8 +19,6 @@ function Checkout() {
   let itemID = useSelector((state: RootState) => state.counter.itemID);
 
   let [currentItem, setItem] = itemID.length != 0 ? useState(0) : useState(-1);
-
-  console.log(itemID);
 
   return (
     <>

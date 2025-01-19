@@ -8,7 +8,7 @@ const incrementSlice = createSlice({
   initialState: {
     value: 0,
     items: [] as item[],
-    itemID: [],
+    itemID: [] as number[],
   },
   reducers: {
     increment: (state) => {
